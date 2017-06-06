@@ -1,0 +1,4 @@
+name = Dealers
+description = Allows to add Dealers and show them on Map.
+dependencies[] = feed_import
+core = 7.x

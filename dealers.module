@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * This module creates dealer contents and allows them to import on a map view.
+ */
+
+
+/**
+ * Implements hook_node_info()
+ */
+function dealers_node_info() {
+  return array(
+    'dealers' => array(
+      'name' => t('Dealer'),
+      'base' => 'dealers',
+      'description' => t('You can create new Dealer here'),
+      'has_title' => TRUE,
+      'title_label' => t('Dealer title')
+    )
+  );
+}
+
+/**
+ * Implement hook_form()
+ */
+function dealers_form($node, $form_state) {
+  return node_content_form($node, $form_state);
+}
