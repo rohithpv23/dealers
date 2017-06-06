@@ -63,7 +63,37 @@ function _dealers_installed_fields() {
       'field_name' => 'dealers_address_1',
       'label' => $t('Adress line 1'),
       'type' => 'text'
-    )
+    ),
+    'dealers_city' => array(
+      'field_name' => 'dealers_city',
+      'label' => $t('City'),
+      'type' => 'text'
+    ),
+    'dealers_state' => array(
+      'field_name' => 'dealers_state',
+      'label' => $t('State'),
+      'type' => 'text'
+    ),
+    'dealers_zip' => array(
+      'field_name' => 'dealers_zip',
+      'label' => $t('Zip Code'),
+      'type' => 'number_integer'
+    ),
+    'dealers_country' => array(
+      'field_name' => 'dealers_country',
+      'label' => $t('Country'),
+      'type' => 'text'
+    ),
+    'dealers_latitude' => array(
+      'field_name' => 'dealers_latitude',
+      'label' => $t('Latitude'),
+      'type' => 'text'
+    ),
+    'dealers_longitude' => array(
+      'field_name' => 'dealers_longitude',
+      'label' => $t('Longitude'),
+      'type' => 'text'
+    ),
   );
 }
 
@@ -79,8 +109,8 @@ function _dealers_installed_instances() {
       ),
       'display' => array(
         'example_node_list' => array(
-          'label' => $t('Adress'),
-          'type' => 'text'
+            'label' => $t('Adress'),
+            'type' => 'text'
         )
       )
     ),
@@ -93,10 +123,94 @@ function _dealers_installed_instances() {
       ),
       'display' => array(
         'example_node_list' => array(
-        'label' => $t('Adress line 1'),
-        'type' => 'text'
+          'label' => $t('Adress line 1'),
+          'type' => 'text'
         )
       )
-    )
+    ),
+    'dealers_city' => array(
+      'field_name' => 'dealers_city',
+      'type' => 'text',
+      'label' => $t('City'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('City'),
+          'type' => 'text'
+        )
+      )
+    ),
+    'dealers_state' => array(
+      'field_name' => 'dealers_state',
+      'type' => 'text',
+      'label' => $t('State'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('State'),
+          'type' => 'text'
+        )
+      )
+    ),
+    'dealers_zip' => array(
+      'field_name' => 'dealers_zip',
+      'type' => 'number_integer',
+      'label' => $t('Zip Code'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('Zip Code'),
+          'type' => 'text'
+        )
+      )
+    ),
+    'dealers_country' => array(
+      'field_name' => 'dealers_country',
+      'type' => 'text',
+      'label' => $t('Country'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('Country'),
+          'type' => 'text'
+        )
+      )
+    ),
+    'dealers_latitude' => array(
+      'field_name' => 'dealers_latitude',
+      'type' => 'text',
+      'label' => $t('Latitude'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('Latitude'),
+          'type' => 'text'
+        )
+      )
+    ),
+    'dealers_longitude' => array(
+      'field_name' => 'dealers_longitude',
+      'type' => 'text',
+      'label' => $t('Longitude'),
+      'widget' => array(
+        'type' => 'text_textfield'
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => $t('Longitude'),
+          'type' => 'text'
+        )
+      )
+    ),
   );
 }
