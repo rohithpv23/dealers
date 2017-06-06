@@ -77,7 +77,7 @@ function _dealers_installed_fields() {
     'dealers_zip' => array(
       'field_name' => 'dealers_zip',
       'label' => $t('Zip Code'),
-      'type' => 'number_integer'
+      'type' => 'text'
     ),
     'dealers_country' => array(
       'field_name' => 'dealers_country',
@@ -87,12 +87,14 @@ function _dealers_installed_fields() {
     'dealers_latitude' => array(
       'field_name' => 'dealers_latitude',
       'label' => $t('Latitude'),
-      'type' => 'text'
+      'type' => 'text',
+      'not null' => TRUE,
     ),
     'dealers_longitude' => array(
       'field_name' => 'dealers_longitude',
       'label' => $t('Longitude'),
-      'type' => 'text'
+      'type' => 'text',
+      'not null' => TRUE,
     ),
   );
 }
@@ -158,7 +160,7 @@ function _dealers_installed_instances() {
     ),
     'dealers_zip' => array(
       'field_name' => 'dealers_zip',
-      'type' => 'number_integer',
+      'type' => 'text',
       'label' => $t('Zip Code'),
       'widget' => array(
         'type' => 'text_textfield'
@@ -187,6 +189,7 @@ function _dealers_installed_instances() {
     'dealers_latitude' => array(
       'field_name' => 'dealers_latitude',
       'type' => 'text',
+      'not null' => TRUE,
       'label' => $t('Latitude'),
       'widget' => array(
         'type' => 'text_textfield'
@@ -201,6 +204,7 @@ function _dealers_installed_instances() {
     'dealers_longitude' => array(
       'field_name' => 'dealers_longitude',
       'type' => 'text',
+      'not null' => TRUE,
       'label' => $t('Longitude'),
       'widget' => array(
         'type' => 'text_textfield'

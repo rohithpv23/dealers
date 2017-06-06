@@ -5,6 +5,13 @@
  * This module creates dealer contents and allows them to import on a map view.
  */
 
+ /**
+  * Implements hook_init()
+  */
+ function dealers_init() {
+
+
+ }
 
 /**
  * Implements hook_node_info()
