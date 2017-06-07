@@ -1,2 +1,7 @@
 # dealers
-Import dealers from csv file: http://localhost:8888/d7/import
+
+Useful paths:
+
+Import dealers from csv file: /import
+Export dealers from csv file: - /dealers-csv
+Table view - /dealers-export
