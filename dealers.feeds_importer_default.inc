@@ -48,6 +48,7 @@ function dealers_feeds_importer_default() {
             'source' => 'Title',
             'target' => 'title',
             'unique' => 1,
+            'language' => 'und',
           ),
           1 => array(
             'source' => 'Adress',
@@ -82,18 +83,6 @@ function dealers_feeds_importer_default() {
           6 => array(
             'source' => 'Zip Code',
             'target' => 'dealers_zip',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          7 => array(
-            'source' => 'Latitude',
-            'target' => 'dealers_latitude',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          8 => array(
-            'source' => 'Longitude',
-            'target' => 'dealers_longitude',
             'unique' => FALSE,
             'language' => 'und',
           ),
