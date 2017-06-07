@@ -1,8 +1,13 @@
 name = Dealers
 description = Allows to add Dealers and show them on Map.
+core = 7.x
 package = Custom
 dependencies[] = ctools
 dependencies[] = feeds
+dependencies[] = views
 dependencies[] = views_data_export
+features[ctools][] = feeds:feeds_importer_default:1
+features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-core = 7.x
+features[feeds_importer][] = dealers
+features[views_view][] = dealers_export

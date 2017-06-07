@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the Dealers feature.
+ */
+
+include_once 'dealers.features.inc';
 
 /**
  * @file
