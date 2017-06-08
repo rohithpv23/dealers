@@ -84,18 +84,6 @@ function _dealers_installed_fields() {
       'label' => $t('Country'),
       'type' => 'text'
     ),
-    'dealers_latitude' => array(
-      'field_name' => 'dealers_latitude',
-      'label' => $t('Latitude'),
-      'type' => 'text',
-      'not null' => TRUE,
-    ),
-    'dealers_longitude' => array(
-      'field_name' => 'dealers_longitude',
-      'label' => $t('Longitude'),
-      'type' => 'text',
-      'not null' => TRUE,
-    ),
   );
 }
 
@@ -182,36 +170,6 @@ function _dealers_installed_instances() {
       'display' => array(
         'example_node_list' => array(
           'label' => $t('Country'),
-          'type' => 'text'
-        )
-      )
-    ),
-    'dealers_latitude' => array(
-      'field_name' => 'dealers_latitude',
-      'type' => 'text',
-      'not null' => TRUE,
-      'label' => $t('Latitude'),
-      'widget' => array(
-        'type' => 'text_textfield'
-      ),
-      'display' => array(
-        'example_node_list' => array(
-          'label' => $t('Latitude'),
-          'type' => 'text'
-        )
-      )
-    ),
-    'dealers_longitude' => array(
-      'field_name' => 'dealers_longitude',
-      'type' => 'text',
-      'not null' => TRUE,
-      'label' => $t('Longitude'),
-      'widget' => array(
-        'type' => 'text_textfield'
-      ),
-      'display' => array(
-        'example_node_list' => array(
-          'label' => $t('Longitude'),
           'type' => 'text'
         )
       )
