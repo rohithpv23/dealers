@@ -15,8 +15,8 @@ include_once 'dealers.features.inc';
   * Implements hook_init()
   */
  function dealers_init() {
-
-
+  $en = entity_load('node', array(12));
+  watchdog('feeds_rohith', '<pre> entity' .  print_r($en, true) . '</pre>');
  }
 
 /**
@@ -39,4 +39,45 @@ function dealers_node_info() {
  */
 function dealers_form($node, $form_state) {
   return node_content_form($node, $form_state);
+}
+
+/**
+ * Implement hook_feeds_after_save()
+ */
+function dealers_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+  $geolocation = array();
+
+  $address = $entity->dealers_city[LANGUAGE_NONE][0]['value'];
+  // Get lat and lng from Dealer's city.
+  $lat_lng = _dealers_get_lat_long($address);
+
+  if (!empty($lat_lng)) {
+    $geolocation['lat'] = $lat_lng['lat'];
+    $geolocation['lng'] = $lat_lng['lng'];
+    $geolocation['lat_sin'] = sin(deg2rad($geolocation['lat']));
+    $geolocation['lat_cos'] = cos(deg2rad($geolocation['lat']));
+    $geolocation['lng_rad'] = deg2rad($geolocation['lng']);
+
+    $entity->field_dealers_location[LANGUAGE_NONE][0]['lat'] = $geolocation['lat'];
+    $entity->field_dealers_location[LANGUAGE_NONE][0]['lng'] = $geolocation['lng'];
+    $entity->field_dealers_location[LANGUAGE_NONE][0]['lat_sin'] = $geolocation['lat_sin'];
+    $entity->field_dealers_location[LANGUAGE_NONE][0]['lat_cos'] = $geolocation['lat_cos'];
+    $entity->field_dealers_location[LANGUAGE_NONE][0]['lng_rad'] = $geolocation['lng_rad'];
+
+    field_attach_update('node', $entity);
+  }
+}
+
+/**
+ * Helper function to get the address
+ */
+function _dealers_get_lat_long($address) {
+  $location = array();
+  $address = str_replace(" ", "+", $address);
+  $json = file_get_contents("http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false&region=$region");
+  $json = json_decode($json);
+  $location['lat'] = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
+  $location['lng'] = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
+
+  return (!empty($location) ? $location : NULL);
 }
