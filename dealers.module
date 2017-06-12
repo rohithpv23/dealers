@@ -11,14 +11,6 @@ include_once 'dealers.features.inc';
  * This module creates dealer contents and allows them to import on a map view.
  */
 
- /**
-  * Implements hook_init()
-  */
- function dealers_init() {
-  $en = entity_load('node', array(12));
-  watchdog('feeds_rohith', '<pre> entity' .  print_r($en, true) . '</pre>');
- }
-
 /**
  * Implements hook_node_info()
  */
